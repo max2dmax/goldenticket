@@ -1,0 +1,35 @@
+body {
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background: linear-gradient(gold, pink);
+    padding: 2rem;
+}
+
+.ticket-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ticket {
+    font-size: 2rem;
+    padding: 1rem;
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #fff8dc;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.ticket:hover {
+    transform: scale(1.1);
+}
+
+.ticket.used {
+    color: gray;
+    background-color: #eee;
+    border-style: dashed;
+}

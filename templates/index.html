@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Golden Tickets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>🎫 The Golden Tickets</h1>
+
+    {% if not has_key %}
+        <form method="post">
+            <input type="password" name="key" placeholder="Enter secret key">
+            <button type="submit">Unlock</button>
+        </form>
+    {% endif %}
+
+    <div class="ticket-container">
+        {% for ticket in tickets %}
+            {% if ticket %}
+                {% if has_key %}
+                    <a href="{{ url_for('use_ticket', ticket_id=loop.index0) }}" class="ticket">🎟️</a>
+                {% else %}
+                    <span class="ticket">🎟️</span>
+                {% endif %}
+            {% else %}
+                <span class="ticket used">❌</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <p>{{ tickets | select('equalto', true) | list | length }} tickets remaining.</p>
+</body>
+</html>
