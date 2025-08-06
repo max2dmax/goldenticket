@@ -4,10 +4,17 @@
     <title>Mindys Golden Tickets</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
+      h1 {
+        font-size: 4rem;
+        font-family: 'Georgia', serif;
+        text-align: center;
+        color: gold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin: 1rem 0;
+      }
       .ticket {
         font-size: 4rem;
         display: inline-block;
-        transform: scale(1.5);
         transition: transform 0.3s ease;
       }
       .ticket:hover {
@@ -21,10 +28,10 @@
         100% { text-shadow: 0 0 30px gold; }
       }
       .ticket-container {
-        display: grid;
-        grid-template-columns: repeat(7, auto);
-        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
         margin: 2rem 0;
       }
 
