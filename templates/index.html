@@ -4,13 +4,29 @@
     <title>Mindys Golden Tickets</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
-      h1 {
-        font-size: 5rem;
-        font-family: 'Georgia', serif;
+      .header-container {
+        position: relative;
+        width: 100%;
         text-align: center;
+        margin-bottom: 1rem;
+      }
+      .header-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .overlay-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        font-family: 'Georgia', serif;
         color: #A52A2A;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin: 1rem 0;
+        background: transparent;
+        margin: 0;
+        padding: 0.5rem 1rem;
       }
       .ticket {
         font-size: 4rem;
@@ -74,11 +90,11 @@
     </style>
 </head>
 <body>
-    <h1>✨ Mindys Golden Tickets ✨</h1>
-    <div class="header-image">
+    <div class="header-container">
       <img src="{{ url_for('static', filename='images/my_pic.png') }}"
            alt="My Picture"
-           style="max-width:100%; height:auto; margin-bottom:1rem;">
+           class="header-img">
+      <h1 class="overlay-title">✨ Mindys Golden Tickets ✨</h1>
     </div>
 
     {% if not has_key %}
